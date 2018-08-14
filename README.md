@@ -1,2 +1,2 @@
 # playeasynow.github.io
-My personal portfolio!
+My personal site!
