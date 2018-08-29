@@ -3,7 +3,7 @@ body {
 }
 
 .centerBox {
-    margin-top: 13%;
+    margin-top: 10%;
     margin-bottom: 10%;
 }
 
@@ -15,5 +15,9 @@ body {
     background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 96px;
+    font-size: 10vw;
+}
+
+.responsiveSize {
+    font-size: 4vw;
 }
