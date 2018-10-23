@@ -1,2 +1,4 @@
-# playeasynow.github.io
-My personal site!
+# Ezequiel Calderon, Jr.
+Welcome to my portfolio repository!
+
+
