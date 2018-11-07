@@ -21,8 +21,6 @@ $(document).ready(function () {
       $("#line1").toggleClass("linerotate3").css("transition", "0.5s");
 
       $(".menuSelectTest").toggleClass("menuSelectTestShow");
-
-      console.log("ok");
   });
 
   setTimeout(function () {
