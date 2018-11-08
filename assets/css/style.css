@@ -3,21 +3,7 @@
     to { background-position: 200px 0; }
 }
 
-/* i {
-    font-style: italic;
-    padding-left: 5px;
-} */
-
 #bananas {
-    /* bottom: 0; */
-    /* height: 5%; */
-    /* width: 100%; */
-    /* padding-top: 6px;
-    padding-bottom: 0px; */
-    /* text-align: center; */
-    /* color: #777777;
-    font-size: 11px;
-    border-top: 5px solid #91d4d1; */
     background: url("../images/bananas.png");
     background-position: 0px 0px;
     background-repeat: repeat-x;
@@ -465,6 +451,10 @@ body {
     transform: scale(1, 1);
     cursor: pointer;
     -webkit-backface-visibility: hidden;
+}
+
+#image1 {
+    background-size: 100% 90%;
 }
 
 .image1Hover {
