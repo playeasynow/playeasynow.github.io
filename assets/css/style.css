@@ -13,14 +13,14 @@
 
 
 @font-face {
-    font-family: Helvetica;
+    font-family: 'Hind Madurai';
     font-weight: normal;
     font-style: normal;
 
 }
 
 @font-face {
-    font-family: Helvetica;
+    font-family: 'Hind Madurai';
 }
 
 * {
@@ -89,7 +89,7 @@ body {
 .h1 {
     font-size: 16px;
     color: #444444;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     margin-bottom: 20px;
     line-height: 1.7em;
 }
@@ -212,7 +212,7 @@ body {
 .headline {
     color: #444444;
     line-height: 1.7em;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 30px;
     width: 100%;
 }
@@ -220,7 +220,7 @@ body {
 .headlineContent {
     color: #444444;
     line-height: 1.7em;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 30px;
     width: 100%;
     text-align: center;
@@ -230,7 +230,7 @@ body {
 .subheadline {
     color: #919191;
     line-height: 1.7em;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 16px;
     width: 100%;
 }
@@ -257,7 +257,7 @@ body {
     margin-right: 20px;
     margin-left: 20px;
     color: #a5a5a5;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 18px;
     text-decoration: none;
     transition: 1s ease;
@@ -267,7 +267,7 @@ body {
     margin-right: 20px;
     margin-left: 20px;
     color: #a5a5a5;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 12px;
     text-decoration: none;
     cursor: pointer;
@@ -315,7 +315,7 @@ body {
     cursor: pointer;
     margin-left: 100px;
     border: 0 solid rgba(0,0,0,1);
-    font: normal normal normal 35px/normal "Chau Philomene One", Helvetica, sans-serif;
+    font: normal normal normal 35px/normal 'Hind Madurai', sans-serif;
     color: rgb(51, 51, 51);
     text-align: center;
     -o-text-overflow: clip;
@@ -341,7 +341,7 @@ body {
 .about {
     color: #3a3a3a;
     margin-right: 100px;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 22px;
     cursor: pointer;
     transition: 0.2s ease;
@@ -353,7 +353,7 @@ body {
 }
 
 .mainContainer {
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 28px;
     height: auto;
     min-height: 400px;
@@ -363,7 +363,7 @@ body {
 }
 
 .menuMainContainer {
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 28px;
 }
 
@@ -393,7 +393,7 @@ body {
 .menusubheadline {
     color: #a5a5a5;
     line-height: 1.7em;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 18px;
     width: 100%;
 }
@@ -487,7 +487,7 @@ body {
 }
 
 .label1 {
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     color: #444444;
     font-size: 18px;
     -ms-transform: translate(0px, -12px) skewY(0deg);
@@ -499,7 +499,7 @@ body {
 }
 
 .label1hover {
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     color: #444444;
     font-size: 18px;
     -ms-transform: translate(0px, 20px) skewY(5deg);
@@ -512,7 +512,7 @@ body {
 }
 
 .label2 {
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     color: #a5a5a5;
     font-size: 18px;
     margin-left: 20px;
@@ -526,7 +526,7 @@ body {
 
 .label2hover {
     margin-left: 20px;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     color: #a5a5a5;
     font-size: 18px;
     -ms-transform: translate(0px, 20px) skewY(3deg);
@@ -544,7 +544,7 @@ body {
 }
 
 .label3 {
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     color: #a5a5a5;
     font-size: 18px;
     opacity: 0;
@@ -554,7 +554,7 @@ body {
 }
 
 .label3hover {
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     color: #a5a5a5;
     font-size: 18px;
     opacity: 1;
@@ -714,7 +714,7 @@ body {
 
 .tags {
     margin-top: 20px;
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 14px;
     color: #e2e2e2;
 }
@@ -821,7 +821,7 @@ body {
 }
 
 .caption {
-    font-family: Helvetica, serif;
+    font-family: 'Hind Madurai', serif;
     font-size: 14px;
     color: #a5a5a5;
     text-align: center;
@@ -869,7 +869,7 @@ body {
         position: absolute;
         color: #3a3a3a;
         line-height: 1.7em;
-        font-family: Helvetica, serif;
+        font-family: 'Hind Madurai', serif;
         font-size: 22px;
         z-index: 3;
         transform: translate(0px, 0px);
