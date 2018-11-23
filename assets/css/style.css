@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 @keyframes animatedBackground {
     from { background-position: 0 0; }
     to { background-position: 200px 0; }
@@ -9,22 +13,6 @@
     background-repeat: repeat-x;
 
     animation: animatedBackground 5s linear infinite;
-}
-
-
-@font-face {
-    font-family: 'Hind Madurai';
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-@font-face {
-    font-family: 'Hind Madurai';
-}
-
-* {
-    box-sizing: border-box;
 }
 
 p {
@@ -42,6 +30,7 @@ body {
     animation-name: bodySlideUp;
     animation-duration: 1.5s;
     margin: 0px;
+    font-family: 'Hind Madurai'
 }
 
 .greyBackgroundExtend {
@@ -50,16 +39,6 @@ body {
     background-color: #f9f9f9;
     margin-top: 500px;
     height: 3950px;
-    width: 100%;
-    z-index: -1;
-}
-
-.greyBackgroundExtendVice {
-    visibility: hidden;
-    position: absolute;
-    background-color: #f9f9f9;
-    margin-top: 500px;
-    height: 1950px;
     width: 100%;
     z-index: -1;
 }
