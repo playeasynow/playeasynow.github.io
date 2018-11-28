@@ -277,6 +277,7 @@ body {
     margin-top: 2rem;
     width: 41vh;
     height: auto;
+    /* margin-left: 9%; */
 }
 
 .marginContainer {
@@ -1031,6 +1032,11 @@ body {
 @media only screen and (max-width: 375px) {
     .ezequiel {
         margin-left: 20px;
+    }
+
+    .ezequiel-portrait {
+        margin-left: 2.5%;
+        width: 95%;
     }
     .contentContainer2 {
         margin-right: 20px;
