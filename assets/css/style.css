@@ -1044,6 +1044,14 @@ body {
         margin-left: 20px;
     }
 
+    .center-gif {
+        width: 90%;
+        height: auto;
+        margin-bottom: 5%;
+        margin-left: 5%;
+        float: none;
+    }
+
     .ezequiel-portrait {
         margin-left: 2.5%;
         width: 95%;
