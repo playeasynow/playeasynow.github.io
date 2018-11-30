@@ -750,7 +750,8 @@ body {
 }
 
 .caseStudy {
-    padding-top: 0px;
+    padding-top: 5%;
+    padding-bottom: 2%;
 }
 
 .fullwidth {
@@ -892,6 +893,14 @@ body {
     }
     #colorFun {
         height: 60%;
+    }
+    .center-gif2 {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .UI {
+        width: 100%;
     }
     
     #wPhoto {
@@ -1062,7 +1071,8 @@ body {
         margin-left: 40px;
     }
     .caseStudy {
-        padding-top: 0;
+        padding-top: 5%;
+        padding-bottom: 2%;
     }
     .zeroHeight {
         height: 0px;
