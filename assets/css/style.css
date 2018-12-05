@@ -447,13 +447,13 @@ body {
     cursor: default;
 }
 
-#image2 {
+/* #image2 { */
     /* background-size: 100% 80%; */
-    margin-top: 8vh;
+    /* margin-top: 8vh;
     height: 60%;
-    cursor: default;
+    cursor: default; */
     /* background-size: 100%; */
-}
+/* } */
 
 .image1Hover {
     width: 100%;
@@ -990,7 +990,7 @@ body {
     }
 
     #image2 {
-        background-size: 100% 80%;
+        background-size: 100% 70%;
         margin-top: 5vh;
     }
     .labelContainer {
