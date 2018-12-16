@@ -355,6 +355,14 @@ body {
     font-family: 'Hind Madurai', serif;
     font-size: 28px;
 }
+.bullets {
+    font-size: 95%;
+}
+
+#mitsui {
+    width: 20%;
+    margin-right: 20%;
+}
 
 .smaller {
     height: auto;
