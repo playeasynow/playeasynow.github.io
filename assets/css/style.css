@@ -459,18 +459,33 @@ body {
     -webkit-backface-visibility: hidden;
 }
 
+.image2 {
+    width: 60%;
+    height: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    transition: 0.5s ease;
+    -ms-transform: scale(1, 1);
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    cursor: default;
+    -webkit-backface-visibility: hidden;
+}
+
 #colorFun {
     height: 90%;
     cursor: default;
 }
 
-/* #image2 { */
-    /* background-size: 100% 80%; */
-    /* margin-top: 8vh;
-    height: 60%;
-    cursor: default; */
-    /* background-size: 100%; */
-/* } */
+#poetweetLight {
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
+}
 
 .image1Hover {
     width: 100%;
@@ -911,6 +926,19 @@ body {
     #colorFun {
         height: 60%;
     }
+
+    #poetweetGif {
+        width: 90%;
+        height: 40%;
+        background-position: 20%;
+        cursor: default;
+    }
+
+    #poetweetLight {
+        background-size: 100% 70%;
+        margin-top: 5vh;
+    }
+
     .center-gif2 {
         width: 90%;
         margin-left: 5%;
@@ -1131,6 +1159,12 @@ body {
     }
 
     #mitsui {
+        width: 90%;
+    }
+
+    #poetweetLight {
+        background-size: 100% 55%;
+        margin-top: 5vh;
         width: 90%;
     }
 
