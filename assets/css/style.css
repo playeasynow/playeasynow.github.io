@@ -360,6 +360,15 @@ body {
 }
 
 #mitsui {
+    width: 18%;
+    margin-right: 21%;
+}
+
+.smallGif {
+    width: 25%;
+}
+
+#alcPic {
     width: 20%;
     margin-right: 20%;
 }
@@ -918,6 +927,19 @@ body {
     #wPhoto2 {
         padding-top: 0px;
     }
+
+    #alcPic {
+        width: 90%;
+    }
+
+    #mitsui {
+        width: 90%;
+    }
+
+    .smallGif {
+        width: 90%;
+    }
+    
     .menuInvisible {
         opacity: 0;
         transform: translate(0px, -30px);
@@ -1104,6 +1126,18 @@ body {
         float: none;
     }
 
+    #alcPic {
+        width: 90%;
+    }
+
+    #mitsui {
+        width: 90%;
+    }
+
+    .smallGif {
+        width: 90%;
+    }
+    
     .ezequiel-portrait {
         margin-left: 2.5%;
         width: 95%;
