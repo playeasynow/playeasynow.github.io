@@ -857,6 +857,13 @@ body {
     /* margin-right: auto; */
 }
 
+.futureChorusPic {
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 .album {
     margin-left: auto;
