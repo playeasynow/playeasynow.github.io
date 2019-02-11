@@ -70,6 +70,12 @@ body {
     padding-bottom: 80px;
 }
 
+.smaller-photo {
+    height: 90vh;
+    width: auto;
+    margin-left: 10%;
+}
+
 .h1 {
     font-size: 16px;
     color: #444444;
@@ -918,6 +924,12 @@ body {
   
     .ezequiel {
         margin-left: 40px;
+    }
+
+    .smaller-photo {
+        width: 100%;
+        height: auto;
+        margin-left: 0;
     }
     .menuMobile {
         visibility: visible;
