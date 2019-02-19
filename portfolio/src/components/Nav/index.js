@@ -34,7 +34,7 @@ class Nav extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-light bg-dark">
                 <Link className="navbar-brand text-white" to="/">
-                <h2><i><b>Google Books</b></i></h2>
+                <h2><i><b>ezequiel</b></i></h2>
                 </Link>
                 <button
                     onClick={this.toggleNav}

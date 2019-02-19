@@ -1,23 +1,22 @@
 import React from "react";
-import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
 function NoMatch() {
-    return(
-        <Container fluid>
-            <Row>
-                <Col size="md-12">
+    return (
+        <div className="container">
+            <div className="row">
+                <div className="col">
                     <Jumbotron>
                         <h1 className="text-center">404 Page Not Found</h1>
                         <h1 className="text-center">
                             <span role="img" aria-label="Face with Rolling Eyes Emoji">
-                            🙄
+                                🙄
                             </span>
                         </h1>
                     </Jumbotron>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 }
 
