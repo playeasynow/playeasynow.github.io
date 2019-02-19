@@ -1,5 +1,5 @@
-# Ezequiel Calderon, Jr.
-Welcome to my Github repository! I am currently using this repo to host my portfolio on Github Pages. All of my work created during the bootcamp is under this master repository. Easy right? :) 
+# Ezequiel Calderon Jr
+Welcome to my Github repository! I am currently using this repo to host my portfolio on Github Pages. All of my work created during the web development certification is under this master repository. Easy right? :) 
 
 # Design Idea
 The design of my site was inspired by a software product designer I follow, Ethan Stuart. I recognized, though I love complex and dazzling front-end designs, I needed to make my portfolio easy-to-read, concise and informative. Hope you like it!
