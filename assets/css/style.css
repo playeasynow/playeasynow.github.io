@@ -1140,6 +1140,12 @@ body {
         background-size: 100% 70%;
         margin-top: 5vh;
     }
+
+    #guruImage {
+        background-size: 100% 40%;
+        margin-top: 2vh;
+    }
+
     .labelContainer {
         height: auto;
         padding-top: 20px;
