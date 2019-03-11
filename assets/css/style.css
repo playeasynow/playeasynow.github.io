@@ -980,6 +980,16 @@ body {
         -webkit-backface-visibility: hidden;
     }
 
+    #guru-home {
+        background-size: 100% 40%;
+        height: 200px;
+        /* margin-top: 5vh; */
+    }
+
+    .imageContainer1 {
+        height: 200px;
+    }
+
     .smaller-photo {
         width: 100%;
         height: auto;
