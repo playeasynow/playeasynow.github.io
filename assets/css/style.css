@@ -26,6 +26,14 @@ a:link {
     text-decoration: none;
 }
 
+#guruMatch {
+    cursor: pointer;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
 body {
     animation-name: bodySlideUp;
     animation-duration: 1.5s;
@@ -521,7 +529,7 @@ body {
 
 #colorFun {
     height: 90%;
-    cursor: default;
+    cursor: pointer;
 }
 
 #poetweetLight {
@@ -943,6 +951,10 @@ body {
     margin-top: 0;
 }
 
+#poetweetGif {
+    cursor: pointer;
+}
+
 /* MID-WIDTH */
 
 @media only screen and (max-width: 975px) {
@@ -1030,7 +1042,7 @@ body {
         width: 90%;
         height: 40%;
         background-position: 20%;
-        cursor: default;
+        cursor: pointer;
     }
 
     #poetweetLight {
