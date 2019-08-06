@@ -501,6 +501,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    background-color: transparent;
     transition: 0.5s ease;
     -ms-transform: scale(1, 1);
     -webkit-transform: scale(1, 1);
@@ -516,6 +517,7 @@ body {
     overflow: hidden;
     background-size: cover;
     background-repeat: no-repeat;
+    background-color: transparent;
     background-position: 50% 50%;
     transition: 0.5s ease;
     border-radius: .25rem;
@@ -995,6 +997,7 @@ body {
     #guru-home {
         background-size: 100% 40%;
         height: 200px;
+        background-color: transparent;
         /* margin-top: 5vh; */
     }
 
@@ -1159,8 +1162,8 @@ body {
     }
 
     #image2 {
-        background-size: 100% 70%;
-        margin-top: 5vh;
+        background-size: 160%;
+        background-color: transparent;
     }
 
     #guruImage {
