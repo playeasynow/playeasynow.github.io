@@ -297,6 +297,10 @@ body {
     /* margin-left: 9%; */
 }
 
+.doggy {
+    margin-top: 2vh;
+}
+
 .marginContainer {
     max-width: 1925px;
     margin-left: auto;
