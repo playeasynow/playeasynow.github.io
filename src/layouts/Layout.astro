@@ -1,0 +1,168 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  activePage: 'home' | 'about';
+}
+
+const { title, activePage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ezequiel Calderon — Senior Delivery Lead, product strategist, and former PwC consultant based in Austin, TX." />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" aria-hidden="true">
+    <button id="mobile-menu-close" aria-label="Close menu">✕</button>
+    <p class="mobile-menu-label">— Menu</p>
+    <nav class="mobile-menu-links">
+      <a href="/" class={activePage === 'home' ? 'active' : ''}>home</a>
+      <a href="/about" class={activePage === 'about' ? 'active' : ''}>about</a>
+    </nav>
+  </div>
+
+  <!-- Nav -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <!--
+        Index page: no class here — anaglyph-nav is added via JS once hero
+        scrolls out of view, so the effect is never shown twice simultaneously.
+        About page: anaglyph-nav is always applied since there is no hero.
+      -->
+      <a href="/" class={`nav-name${activePage === 'about' ? ' anaglyph-nav' : ''}`}>ezequiel</a>
+      <div class="nav-links">
+        <a href="/" class={activePage === 'home' ? 'active' : ''}>home</a>
+        <a href="/about" class={activePage === 'about' ? 'active' : ''}>about</a>
+      </div>
+      <button id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page content injected here -->
+  <slot />
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <span>ezequiel calderon</span>
+      <div class="footer-links">
+        <a href="https://linkedin.com/in/ezequielcalderonjr/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/playeasynow" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://instagram.com/playeasynow/" target="_blank" rel="noopener">Instagram</a>
+        <a href="mailto:ezequiel@ja.partners">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Hamburger / Mobile Menu ──────────────────────────────────
+    const hamburger  = document.getElementById('hamburger')!;
+    const mobileMenu = document.getElementById('mobile-menu')!;
+    const closeBtn   = document.getElementById('mobile-menu-close')!;
+
+    const openMenu  = () => {
+      mobileMenu.classList.add('open');
+      mobileMenu.setAttribute('aria-hidden', 'false');
+      hamburger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+    const closeMenu = () => {
+      mobileMenu.classList.remove('open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+    hamburger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+    // ── Smart Nav (hide on scroll down, reappear on scroll up) ──
+    const nav = document.getElementById('nav')!;
+    let lastY = 0;
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      nav.classList.toggle('hidden', y > lastY && y > nav.offsetHeight);
+      lastY = y;
+    }, { passive: true });
+
+    // ── Fade-up IntersectionObserver ────────────────────────────
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+    // ── Hero-specific: parallax + nav anaglyph toggle ───────────
+    // (These are no-ops on the about page where the elements don't exist)
+    const heroName  = document.getElementById('hero-name');
+    const heroSect  = document.getElementById('hero');
+    const navName   = document.querySelector<HTMLElement>('.nav-name');
+
+    if (heroSect && navName) {
+      // Nav anaglyph: appears once hero scrolls out of view,
+      // disappears when it re-enters (so the effect is never shown twice)
+      const heroIO = new IntersectionObserver(([entry]) => {
+        navName.classList.toggle('anaglyph-nav', !entry.isIntersecting);
+      }, { threshold: 0 });
+      heroIO.observe(heroSect);
+    }
+
+    if (heroName) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY < window.innerHeight) {
+          heroName.style.transform = `translateY(${window.scrollY * 0.18}px)`;
+        }
+      }, { passive: true });
+    }
+
+    // ── Card cursor-glow ─────────────────────────────────────────
+    document.querySelectorAll<HTMLElement>('.pc').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', ((e.clientX - r.left) / r.width  * 100).toFixed(1) + '%');
+        card.style.setProperty('--my', ((e.clientY - r.top)  / r.height * 100).toFixed(1) + '%');
+      });
+    });
+
+    // ── Equal card heights (desktop grid only) ───────────────────
+    function equalizeCards() {
+      const outers = [...document.querySelectorAll<HTMLElement>('.projects-grid .pc-outer')];
+      if (!outers.length || window.innerWidth < 640) return;
+      outers.forEach(o => (o.style.height = 'auto'));
+      const max = Math.max(...outers.map(o => o.offsetHeight));
+      outers.forEach(o => (o.style.height = max + 'px'));
+    }
+    equalizeCards();
+    document.fonts.ready.then(equalizeCards);
+    window.addEventListener('resize', equalizeCards);
+
+    // ── Carousel dot indicators ──────────────────────────────────
+    const carousel = document.getElementById('carousel');
+    const dots     = document.querySelectorAll('.carousel-dot');
+    if (carousel && dots.length) {
+      carousel.addEventListener('scroll', () => {
+        const cardW = (carousel.firstElementChild as HTMLElement).offsetWidth + 14;
+        const idx   = Math.round(carousel.scrollLeft / cardW);
+        dots.forEach((d, i) => d.classList.toggle('active', i === idx));
+      }, { passive: true });
+    }
+  </script>
+
+</body>
+</html>
