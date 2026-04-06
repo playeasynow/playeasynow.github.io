@@ -596,6 +596,9 @@ footer { background: var(--bg-white); border-top: 1px solid var(--border); }
   .projects-carousel-wrap { display: block; margin-left: -0.75rem; margin-right: -0.75rem; }
   /* Restore visual alignment: match section-inner's 0.75rem side padding */
   .projects-carousel { padding: 10px 0.75rem 14px; }
+  /* First card only: extra left margin pushes it clear of the iOS Safari scroll-start
+     clip zone so the ring's -2px inset renders inside the content area, not the padding area */
+  .projects-carousel .pc-outer:first-child { margin-left: 6px; }
 
   .skills-grid { grid-template-columns: 1fr; gap: 2rem; }
 
