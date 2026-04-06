@@ -17,6 +17,15 @@ const { title, activePage } = Astro.props;
   <meta name="description" content="Ezequiel Calderon — Senior Delivery Lead, product strategist, and former PwC consultant based in Austin, TX." />
   <title>{title}</title>
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/playeasynow/playeasynow.github.io/master/assets/img-vid/letterE3.png" />
+  <!-- Prevent flash of wrong theme: set data-theme before first paint -->
+  <script is:inline>
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
@@ -45,6 +54,7 @@ const { title, activePage } = Astro.props;
         <a href="/" class={activePage === 'home' ? 'active' : ''}>home</a>
         <a href="/about" class={activePage === 'about' ? 'active' : ''}>about</a>
       </div>
+      <button id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode"></button>
       <button id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -68,6 +78,25 @@ const { title, activePage } = Astro.props;
   </footer>
 
   <script>
+    // ── Theme toggle ────────────────────────────────────────────
+    const themeBtn = document.getElementById('theme-toggle')!;
+    const html     = document.documentElement;
+
+    const getEffectiveTheme = () => {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || saved === 'light') return saved;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+
+    const applyTheme = (theme: string) => {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    };
+
+    themeBtn.addEventListener('click', () => {
+      applyTheme(getEffectiveTheme() === 'dark' ? 'light' : 'dark');
+    });
+
     // ── Hamburger / Mobile Menu ──────────────────────────────────
     const hamburger  = document.getElementById('hamburger')!;
     const mobileMenu = document.getElementById('mobile-menu')!;
