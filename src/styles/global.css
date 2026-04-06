@@ -417,12 +417,30 @@ a { color: inherit; text-decoration: none; }
 }
 .carousel-dot.active { background: var(--text-dark); transform: scale(1.3); }
 
-/* Touch devices: show ring at rest (dim) since hover doesn't exist.
-   Remove the default gray tap highlight flash on iOS/Android. */
+/* Touch devices: always-on ring with no overflow.
+   inset: -2px extends OUTSIDE the card, which iOS Safari clips inside
+   overflow-x:auto scroll containers. Fix: use inset:0 + CSS gradient-mask
+   so the ring is rendered as a 2px inner border — zero overflow, never clipped. */
 @media (hover: none) {
-  /* Ring more visible on touch — it's the primary visual edge of the card */
-  .pc-outer::before { opacity: 0.45; animation-play-state: running; }
-  /* Remove the border and background contrast so the ring does all the work */
+  .pc-outer::before {
+    opacity: 0.45;
+    animation-play-state: running;
+    /* Keep the pseudo-element inside .pc-outer bounds */
+    inset: 0;
+    border-radius: 12px;
+    /* Raise above .pc so the masked border is visible */
+    z-index: 2;
+    /* Show only the outer 2px as a "border" — center is transparent */
+    padding: 2px;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+  }
   .pc {
     border-color: transparent;
     background: var(--bg-white);
@@ -596,9 +614,6 @@ footer { background: var(--bg-white); border-top: 1px solid var(--border); }
   .projects-carousel-wrap { display: block; margin-left: -0.75rem; margin-right: -0.75rem; }
   /* Restore visual alignment: match section-inner's 0.75rem side padding */
   .projects-carousel { padding: 10px 0.75rem 14px; }
-  /* First card only: extra left margin pushes it clear of the iOS Safari scroll-start
-     clip zone so the ring's -2px inset renders inside the content area, not the padding area */
-  .projects-carousel .pc-outer:first-child { margin-left: 6px; }
 
   .skills-grid { grid-template-columns: 1fr; gap: 2rem; }
 
