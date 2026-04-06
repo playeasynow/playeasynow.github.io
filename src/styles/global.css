@@ -389,7 +389,9 @@ a { color: inherit; text-decoration: none; }
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
   gap: 0.875rem; scrollbar-width: none;
-  padding-bottom: 0.5rem;
+  /* padding gives the animated ring (inset: -2px) room to render
+     without being clipped by the overflow-x: auto container */
+  padding: 4px 4px 10px;
 }
 .projects-carousel::-webkit-scrollbar { display: none; }
 .projects-carousel .pc-outer { flex: 0 0 87%; scroll-snap-align: start; }
@@ -402,11 +404,13 @@ a { color: inherit; text-decoration: none; }
 }
 .carousel-dot.active { background: var(--text-dark); transform: scale(1.3); }
 
-/* Touch devices: show ring at rest (dim) since hover doesn't exist */
+/* Touch devices: show ring at rest (dim) since hover doesn't exist.
+   Remove the default gray tap highlight flash on iOS/Android. */
 @media (hover: none) {
   .pc-outer::before { opacity: 0.22; animation-play-state: running; }
   .pc { border-color: transparent; }
 }
+.pc-outer { -webkit-tap-highlight-color: transparent; }
 
 /* ═══════════════════════════════════════════════════════════
    Skills  ·  gray
