@@ -575,11 +575,14 @@ footer { background: var(--bg-white); border-top: 1px solid var(--border); }
   .hero-inner { padding-top: calc(var(--nav-h) + 2rem); }
   .hero-tagline { font-size: 0.9375rem; }
 
-  .tl-item::before { left: -1.8125rem; }
   .tl-header { flex-direction: column; gap: 0.15rem; }
 
   .projects-grid { display: none; }
-  .projects-carousel-wrap { display: block; }
+  /* Break carousel out of section-inner padding so iOS Safari's overflow-x:auto
+     container has its left edge at the viewport edge — prevents ring clipping */
+  .projects-carousel-wrap { display: block; margin-left: -1.25rem; margin-right: -1.25rem; }
+  /* Restore visual alignment: match section-inner's 1.25rem side padding */
+  .projects-carousel { padding: 10px 1.25rem 14px; }
 
   .skills-grid { grid-template-columns: 1fr; gap: 2rem; }
 
